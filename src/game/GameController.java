@@ -14,5 +14,7 @@ public class GameController {
 			GUI.addPlayer(this.players[i].getName(), 30000);
 			GUI.setCar(1, this.players[i].getName());
 		}
+		Turn turn = new Turn(players);
+		Dice dice = new Dice(6);
 	}
 }
