@@ -8,6 +8,7 @@ public class Player {
 	public Player(String x){
 		name = x;
 		account = new Account();
+		position = 1;
 	}
 	
 	public String getName(){
@@ -16,5 +17,13 @@ public class Player {
 
 	public Account getAccount(){
 		return account;
+	}
+	
+	public int getPosition(){
+		return position;
+	}
+	
+	public void setPosition(int x){
+		position += x;
 	}
 }
