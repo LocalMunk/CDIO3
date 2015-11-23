@@ -12,11 +12,9 @@ public class Turn {
 	public void change(){
 		if(check == numofplayers){
 			check = 1;
-			System.out.println("palyer 1 havde turn");
 		}
 		else{
 			check++;
-			System.out.println("playererre 2 lal");
 		}
 	}
 	
