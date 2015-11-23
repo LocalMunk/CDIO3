@@ -14,8 +14,32 @@ public  class LaborCamp extends Ownable {
 
 		@Override
 		public void landOnField(Player player) {
-			// TODO Auto-generated method stub
+			if(player == owner){
+				
+				System.out.println("Du er ejeren");
+				
+			}
 			
+			
+			
+		}
+
+		@Override
+		public int getPrice() {
+			// TODO Auto-generated method stub
+			return price;
+		}
+
+		@Override
+		public void setOwner(Player player) {
+			player = owner;
+			
+		}
+
+		@Override
+		public Player getOwner() {
+			// TODO Auto-generated method stub
+			return owner;
 		}
 	
 
