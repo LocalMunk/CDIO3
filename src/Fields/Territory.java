@@ -8,11 +8,13 @@ public class Territory extends Ownable {
 	private int rent, price;
 	private Player owner;
 	private boolean owned;
+	private String name
 
-	public Territory(int a, int b){
+	public Territory(int a, int b, String c){
 		rent = a;
 		price = b;
 		owned = false;
+		name = c;
 	}
 	@Override
 	public int getRent() {
@@ -34,5 +36,10 @@ public class Territory extends Ownable {
 	public void setOwner(Player player ) {
 		// TODO Auto-generated method stub
 		owner = player;
+	}
+	@Override
+	public void setOwner() {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -2,7 +2,7 @@ package Fields;
 
 import game.Player;
 
-public abstract class Ownable extends Field {
+public abstract class Ownable extends Area {
 
 	protected int price;
 	protected Player owner;

@@ -8,7 +8,7 @@ import desktop_fields.Tax;
 import desktop_fields.Refuge;
 import desktop_fields.Start;
 import desktop_fields.Shipping;
-
+import Fields.*;
 
 
 public class GameBoard {
@@ -38,5 +38,30 @@ public class GameBoard {
 		fields[20] = new Shipping.Builder().setTitle("Privateer Armada").setSubText("Price = 4000").setDescription("Price is 4000, pay 500 for 1 fleet, 1000 for, 2000 for 3, 4000 for 4").build();			// Fleet: Privateer Armada
 		fields[21] = new Street.Builder().setTitle("Castle").setSubText("Price = 8000").setDescription("Price is 8000 and rent is 4000").build();						// Territory Castle
 		GUI.create(fields);
+		
+		Area[] lots = new Area[21];
+		lots[0] = new Territory(100, 1000, "Tribe Encampment");
+		lots[1] = new LaborCamp(2500);
+		lots[2] = new Territory(300, 1500, "Crater");
+		lots[3] = new Tax(2000);
+		lots[4] = new Territory(500, 2000, "Mountain");
+		lots[5] = new Fleet();
+		lots[6] = new Territory(700, 3000, "Cold Desert");
+		lots[7] = new Refuge(5000);
+		lots[8] = new Territory(1000, 4000, "Black Cave");
+		lots[9] = new Fleet();
+		lots[10] = new Territory(1300, 4300, "The Werewall");
+		lots[11] = new LaborCamp(2500);
+		lots[12] = new Territory(1600, 4750, "Mountain Village");
+		lots[13] = new Tax(4000);
+		lots[14] = new Territory(2000, 5000, "South Citadel");
+		lots[15] = new Fleet();
+		lots[16] = new Territory(2600, 5500, "Palace Gates");
+		lots[17] = new Refuge(500);
+		lots[18] = new Territory(3200, 6000, "Tower");
+		lots[19] = new Fleet();
+		lots[20] = new Territory(4000, 8000, "Castle");
 	}
 }
+
+
