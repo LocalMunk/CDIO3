@@ -5,10 +5,11 @@ import game.Player;
 
 public class LaborCamp extends Ownable {
 
-	private int baseRent;
+	private int price;
 	
 	public LaborCamp(int a){
-		baseRent = a;
+		price = a;
+		owned = false;
 	}
 
 	@Override
@@ -21,18 +22,24 @@ public class LaborCamp extends Ownable {
 	public void landOnField(Player player) {
 		if (player == owner) {
 
-			System.out.println("Du er ejeren");
+			GUI.showMessage("You own this field");
 
 		}
 
-		else if (owner == null) {
+		else if (owned == false) {
 
-			if (player.getAccount().getBalance() >= price && GUI.getUserLeftButtonPressed("Buy field?", "Yes", "No")) {
-
-				player = owner;
+			if (player.getAccount().getBalance() >= price && GUI.getUserLeftButtonPressed("Do you want to buy this fieldfield?", "Yes", "No")) {
+				owned = true;
+				owner = player;
+				player.getAccount().withdraw(price);
 
 			}
 
+		}
+		else if(owned = true && owner != player){
+			
+			player.getAccount().withdraw(baseRent);
+			owner.getAccount().deposit(baseRent);
 		}
 
 	}

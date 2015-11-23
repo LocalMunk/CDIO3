@@ -17,7 +17,7 @@ public class GameBoard {
 		Field[] fields = new Field[22];
 		fields[0] = new Start.Builder().setTitle("Hometown").build();											// Start: Oxford
 		fields[1] = new Street.Builder().setTitle("Tribe Encampment").setSubText("Price = 1000").setDescription("Price is 1000 and rent is 100").build();				// Territory: Tribe Encampment
-		fields[2] = new Street.Builder().setTitle("Labor Camp").setSubText("Price = 2500").setDescription("Price is 2500, pay 100xvalue on dice").build();					// Labor Camp: Huts in the Mountain
+		fields[2] = new Street.Builder().setTitle("huts in the mountain").setSubText("Price = 2500").setDescription("Price is 2500, pay 100xvalue on dice").build();					// Labor Camp: Huts in the Mountain
 		fields[3] = new Street.Builder().setTitle("Crater").setSubText("Price = 1500").setDescription("Price is 1500 and rent is 300").build();						// Territory: Crater
 		fields[4] = new Tax.Builder().setTitle("Goldmine").setSubText("Pay 2000 when landing here").setDescription("Pay 2000").build();							// Tax: Goldmine
 		fields[5] = new Street.Builder().setTitle("Mountain").setSubText("Price = 2000").setDescription("Price is 2000 and rent is 500").build();					   	// Territory: Mountain

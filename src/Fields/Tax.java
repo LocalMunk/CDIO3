@@ -2,13 +2,14 @@ package Fields;
 
 import game.Player;
 
-public class Tax extends Area{
+public class Tax extends Area {
 	
 	private int taxAmount;
 	private int taxRate = -1;
 
 	public Tax(int a){
-		taxAmount = a;	}
+		taxAmount = a;	
+	}
 
 	@Override
 	public void landOnField(Player player) {
@@ -23,6 +24,4 @@ public class Tax extends Area{
 	public void setTaxAmount(int taxAmount) {
 		this.taxAmount = taxAmount;
 	}
-	 	
-
 }

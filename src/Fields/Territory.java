@@ -1,5 +1,6 @@
 package Fields;
 
+import desktop_resources.GUI;
 import game.Player;
 
 public class Territory extends Ownable {
@@ -23,7 +24,25 @@ public class Territory extends Ownable {
 
 	@Override
 	public void landOnField(Player player) {
-		
+		if (player == owner) {
+
+			GUI.showMessage("You own this field");
+
+		}
+
+		else if (owned == false) {
+
+			if (player.getAccount().getBalance() >= price && GUI.getUserLeftButtonPressed("Do you want to buy this fieldfield?", "Yes", "No")) {
+				owned = true;
+				owner = player;
+
+			}
+
+		}
+		else if(owned = true && owner != player){
+			player.getAccount().withdraw(baseRent);
+			owner.getAccount().deposit(baseRent);
+		}
 	}
 
 	public int getPrice(){

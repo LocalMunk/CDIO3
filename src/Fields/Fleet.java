@@ -18,6 +18,21 @@ public  class Fleet extends Ownable {
 			// TODO Auto-generated method stub
 			
 		}
+		@Override
+		public int getPrice() {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+		@Override
+		public void setOwner() {
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public Player getOwner() {
+			// TODO Auto-generated method stub
+			return null;
+		}
 	
 	
 }
