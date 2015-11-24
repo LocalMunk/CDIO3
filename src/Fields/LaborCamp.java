@@ -1,12 +1,13 @@
 package Fields;
 
 import desktop_resources.GUI;
+import game.Dice;
 import game.Player;
 
 public class LaborCamp extends Ownable {
 
 	private int price;
-	
+	private Dice dice = new Dice(6);
 	public LaborCamp(int a){
 		price = a;
 		owned = false;
@@ -37,9 +38,11 @@ public class LaborCamp extends Ownable {
 
 		}
 		else if(owned = true && owner != player){
-			
-			player.getAccount().withdraw(baseRent);
-			owner.getAccount().deposit(baseRent);
+			int getmoney = dice.roll();
+			player.getAccount().withdraw(getmoney * 100);
+			owner.getAccount().deposit(getmoney *100);
+			GUI.setBalance(player.getName(), player.getAccount().getBalance());
+			GUI.setBalance(owner.getName(), owner.getAccount().getBalance());
 		}
 
 	}

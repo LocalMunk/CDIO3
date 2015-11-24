@@ -1,20 +1,33 @@
 package Fields;
 
+import desktop_resources.GUI;
 import game.Player;
 
-public class Tax extends Area {
+public class Tax extends Area{
 	
 	private int taxAmount;
 	private int taxRate = -1;
+	private String fieldName;
 
-	public Tax(int a){
-		taxAmount = a;	
+	public Tax(int a, String b){
+		taxAmount = a;
+		fieldName = b;
 	}
 
 	@Override
 	public void landOnField(Player player) {
-		// TODO Auto-generated method stub
-		
+		if(fieldName.equals("Caravan")){
+			if(GUI.getUserLeftButtonPressed("u want to pay 10% of ur totales moneys, or u wantes to pay me many money(i think maybe 4k", "10%", "Many money")){
+				player.getAccount().withdraw(player.getAccount().getBalance()/10);
+			}
+			else{
+				player.getAccount().withdraw(taxAmount);
+			}
+		}
+		else
+			player.getAccount().withdraw(taxAmount);
+		GUI.setBalance(player.getName(), player.getAccount().getBalance());
+
 	}
 
 	public int getTaxAmount() {
@@ -23,5 +36,13 @@ public class Tax extends Area {
 
 	public void setTaxAmount(int taxAmount) {
 		this.taxAmount = taxAmount;
+	}
+
+	public int getTaxRate() {
+		return taxRate;
+	}
+
+	public void setTaxRate(int taxRate) {
+		this.taxRate = taxRate;
 	}
 }

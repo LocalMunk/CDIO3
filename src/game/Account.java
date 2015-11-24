@@ -6,6 +6,10 @@ public class Account {
 
 	private int balance;
 	
+	public Account(int a){
+		balance = a;
+	}
+	
 	public int getBalance(){
 		return balance;
 	}

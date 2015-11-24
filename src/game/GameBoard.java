@@ -3,7 +3,6 @@ package game;
 import desktop_fields.Field;
 import desktop_fields.Street;
 import desktop_resources.GUI;
-import desktop_resources.GUI;
 import desktop_fields.Tax;
 import desktop_fields.Refuge;
 import desktop_fields.Start;
@@ -13,8 +12,11 @@ import Fields.*;
 
 public class GameBoard {
 
+	private Area[] areas = new Area[21];
+	private  Field[] fields = new Field[22];
+	
 	public GameBoard(){
-		Field[] fields = new Field[22];
+		
 		fields[0] = new Start.Builder().setTitle("Hometown").build();											// Start: Oxford
 		fields[1] = new Street.Builder().setTitle("Tribe Encampment").setSubText("Price = 1000").setDescription("Price is 1000 and rent is 100").build();				// Territory: Tribe Encampment
 		fields[2] = new Street.Builder().setTitle("huts in the mountain").setSubText("Price = 2500").setDescription("Price is 2500, pay 100xvalue on dice").build();					// Labor Camp: Huts in the Mountain
@@ -39,28 +41,33 @@ public class GameBoard {
 		fields[21] = new Street.Builder().setTitle("Castle").setSubText("Price = 8000").setDescription("Price is 8000 and rent is 4000").build();						// Territory Castle
 		GUI.create(fields);
 		
-		Area[] lots = new Area[21];
-		lots[0] = new Territory(100, 1000, "Tribe Encampment");
-		lots[1] = new LaborCamp(2500);
-		lots[2] = new Territory(300, 1500, "Crater");
-		lots[3] = new Tax(2000);
-		lots[4] = new Territory(500, 2000, "Mountain");
-		lots[5] = new Fleet();
-		lots[6] = new Territory(700, 3000, "Cold Desert");
-		lots[7] = new Refuge(5000);
-		lots[8] = new Territory(1000, 4000, "Black Cave");
-		lots[9] = new Fleet();
-		lots[10] = new Territory(1300, 4300, "The Werewall");
-		lots[11] = new LaborCamp(2500);
-		lots[12] = new Territory(1600, 4750, "Mountain Village");
-		lots[13] = new Tax(4000);
-		lots[14] = new Territory(2000, 5000, "South Citadel");
-		lots[15] = new Fleet();
-		lots[16] = new Territory(2600, 5500, "Palace Gates");
-		lots[17] = new Refuge(500);
-		lots[18] = new Territory(3200, 6000, "Tower");
-		lots[19] = new Fleet();
-		lots[20] = new Territory(4000, 8000, "Castle");
+		areas[0] = new Territory(100, 1000, "Tribe Encampment", 0);
+		areas[1] = new LaborCamp(2500);
+		areas[2] = new Territory(300, 1500, "Crater", 2);
+		areas[3] = new Fields.Tax(2000, "Goldmine");
+		areas[4] = new Territory(500, 2000, "Mountain", 4);
+		areas[5] = new Fleet();
+		areas[6] = new Territory(700, 3000, "Cold Desert", 6);
+		areas[7] = new Fields.Refuge(5000);
+		areas[8] = new Territory(1000, 4000, "Black Cave", 8);
+		areas[9] = new Fleet();
+		areas[10] = new Territory(1300, 4300, "The Werewall", 10);
+		areas[11] = new LaborCamp(2500);
+		areas[12] = new Territory(1600, 4750, "Mountain Village", 12);
+		areas[13] = new Fields.Tax(4000, "Caravan");
+		areas[14] = new Territory(2000, 5000, "South Citadel", 14);
+		areas[15] = new Fleet();
+		areas[16] = new Territory(2600, 5500, "Palace Gates", 16);
+		areas[17] = new Fields.Refuge(500);
+		areas[18] = new Territory(3200, 6000, "Tower", 18);
+		areas[19] = new Fleet();
+		areas[20] = new Territory(4000, 8000, "Castle", 20);
+	}
+	
+	public Area getAreas(int a){
+		a--;
+		a--;
+		return areas[a];
 	}
 }
 

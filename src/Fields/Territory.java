@@ -8,14 +8,15 @@ public class Territory extends Ownable {
 	
 	private int rent, price;
 	private Player owner;
-	private boolean owned;
-	private String name
+	private boolean owned, buybutton;
+	private String name;
 
-	public Territory(int a, int b, String c){
+	public Territory(int a, int b, String c, int d){
 		rent = a;
 		price = b;
 		owned = false;
 		name = c;
+		fieldnumber = d;
 	}
 	@Override
 	public int getRent() {
@@ -30,18 +31,17 @@ public class Territory extends Ownable {
 
 		}
 
-		else if (owned == false) {
-
-			if (player.getAccount().getBalance() >= price && GUI.getUserLeftButtonPressed("Do you want to buy this fieldfield?", "Yes", "No")) {
+		else if (owned != true && player.getAccount().getBalance() >= price && GUI.getUserLeftButtonPressed("Do you want to buy this fieldfield?", "Yes", "No")) {
 				owned = true;
 				owner = player;
-
-			}
-
+				GUI.showMessage("You are the proud owner of this.");
+				GUI.setOwner(fieldnumber-1, owner.getName());
 		}
 		else if(owned = true && owner != player){
-			player.getAccount().withdraw(baseRent);
-			owner.getAccount().deposit(baseRent);
+			player.getAccount().withdraw(rent);
+			owner.getAccount().deposit(rent);
+			GUI.setBalance(player.getName(), player.getAccount().getBalance());
+			GUI.setBalance(owner.getName(), owner.getAccount().getBalance());
 		}
 	}
 

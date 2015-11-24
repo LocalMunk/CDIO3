@@ -12,14 +12,15 @@ public class GameController {
 	
 	public GameController(){
 		board = new GameBoard();
-		int x = GUI.getUserInteger("How many players(2-6 players)", 2, 6);
+		//int x = GUI.getUserInteger("How many players(2-6 players)", 2, 6);
+		int x = 2;
 		this.players = new Player[x];
 		for(int i = 0; i < x; i++){
 			//y = GUI.getUserString("What is your name?");
 			y = new String[2];
 			y[0] ="hej";
 			y[1] ="farvel";
-			this.players[i] = new Player(y[i]);
+			this.players[i] = new Player(y[i], 30000);
 			GUI.addPlayer(this.players[i].getName(), 30000);
 			GUI.setCar(1, this.players[i].getName());
 		}
@@ -48,6 +49,7 @@ public class GameController {
 					GUI.setCar(player.getPosition(), player.getName());
 				}
 			}
+			board.getAreas(player.getPosition()).landOnField(player);
 			turn.change();
 			
 		}

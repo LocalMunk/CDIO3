@@ -1,5 +1,6 @@
 package Fields;
 
+import desktop_resources.GUI;
 import game.Player;
 
 public class Refuge extends Area{
@@ -12,8 +13,8 @@ public class Refuge extends Area{
 	
 	@Override
 	public void landOnField(Player player) {
-		// TODO Auto-generated method stub
-		
+		player.getAccount().deposit(bonus);
+		GUI.setBalance(player.getName(), player.getAccount().getBalance());
 	}
 	
 	
