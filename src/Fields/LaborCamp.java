@@ -8,8 +8,9 @@ public class LaborCamp extends Ownable {
 
 	private int price;
 	private Dice dice = new Dice(6);
-	public LaborCamp(int a){
+	public LaborCamp(int a, int b){
 		price = a;
+		fieldnumber = b;
 		owned = false;
 	}
 

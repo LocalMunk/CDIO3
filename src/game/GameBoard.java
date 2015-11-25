@@ -43,7 +43,7 @@ public class GameBoard {
 		
 		areas[0] = new Fields.StartField();
 		areas[1] = new Territory(100, 1000, "Tribe Encampment", 1);
-		areas[2] = new LaborCamp(2500);
+		areas[2] = new LaborCamp(2500, 2);
 		areas[3] = new Territory(300, 1500, "Crater", 3);
 		areas[4] = new Fields.Tax(2000, "Goldmine");
 		areas[5] = new Territory(500, 2000, "Mountain", 5);
@@ -53,7 +53,7 @@ public class GameBoard {
 		areas[9] = new Territory(1000, 4000, "Black Cave", 9);
 		areas[10] = new Fleet("Sea Grover", 10);
 		areas[11] = new Territory(1300, 4300, "The Werewall", 11);
-		areas[12] = new LaborCamp(2500);
+		areas[12] = new LaborCamp(2500, 12);
 		areas[13] = new Territory(1600, 4750, "Mountain Village", 13);
 		areas[14] = new Fields.Tax(4000, "Caravan");
 		areas[15] = new Territory(2000, 5000, "South Citadel", 15);
