@@ -10,6 +10,7 @@ public  class Fleet extends Ownable {
 		private final int RENT_3 = 2000;
 		private final int RENT_4 = 4000;
 		private String name;
+		private final int price = 4000;
 		
 		public Fleet(String a, int b){
 			name = a;
@@ -34,6 +35,8 @@ public  class Fleet extends Ownable {
 					GUI.showMessage("You are the proud owner of this.");
 					player.addFieldsOwned();
 					GUI.setOwner(fieldnumber+2, owner.getName());
+					player.getAccount().withdraw(price);
+					GUI.setBalance(player.getName(), player.getAccount().getBalance());
 				}
 			}
 			else if(owned = true && owner != player){

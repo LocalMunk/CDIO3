@@ -28,11 +28,9 @@ public class GameController {
 		dice = new Dice(6);
 	}
 	
-	public void loop(Player player){
+	public void loop(){
 		while(true){
-			if(player.isAlive()){
-			game(player);
-			}
+			game(players[turn.getCheck()-1]);
 		}
 	}
 	

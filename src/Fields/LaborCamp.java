@@ -32,7 +32,7 @@ public class LaborCamp extends Ownable {
 			if (player.getAccount().getBalance() >= price && GUI.getUserLeftButtonPressed("Do you want to buy this field?", "Yes", "No")) {
 				owned = true;
 				owner = player;
-				player.getAccount().withdraw(price);
+				
 				GUI.setOwner(fieldnumber+2, owner.getName());
 
 			}
