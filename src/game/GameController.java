@@ -22,7 +22,7 @@ public class GameController {
 			y[1] ="farvel";
 			this.players[i] = new Player(y[i], 30000, true);
 			GUI.addPlayer(this.players[i].getName(), 30000);
-			GUI.setCar(1, this.players[i].getName());
+			GUI.setCar(1,this.players[i].getName());
 		}
 		turn = new Turn(x);
 		dice = new Dice(6);
@@ -49,7 +49,7 @@ public class GameController {
 					GUI.setCar(player.getPosition(), player.getName());
 				}
 			}
-			board.getAreas(player.getPosition()).landOnField(player);
+			board.getAreas(player.getPosition()+1).landOnField(player);
 			if(player.getAccount().getBalance() == 0){
 				GUI.showMessage(player.getName() + " is dead");
 				GUI.removeAllCars(player.getName());

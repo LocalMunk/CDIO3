@@ -34,7 +34,7 @@ public  class Fleet extends Ownable {
 					owner = player;
 					GUI.showMessage("You are the proud owner of this.");
 					player.addFieldsOwned();
-					GUI.setOwner(fieldnumber+2, owner.getName());
+					GUI.setOwner(fieldnumber+1, owner.getName());
 					player.getAccount().withdraw(price);
 					GUI.setBalance(player.getName(), player.getAccount().getBalance());
 				}
