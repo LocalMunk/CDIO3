@@ -29,18 +29,18 @@ public class LaborCamp extends Ownable {
 
 		else if (owned == false) {
 
-			if (player.getAccount().getBalance() >= price && GUI.getUserLeftButtonPressed("Do you want to buy this fieldfield?", "Yes", "No")) {
+			if (player.getAccount().getBalance() >= price && GUI.getUserLeftButtonPressed("Do you want to buy this field?", "Yes", "No")) {
 				owned = true;
 				owner = player;
 				player.getAccount().withdraw(price);
+				GUI.setOwner(fieldnumber+2, owner.getName());
 
 			}
 
 		}
 		else if(owned = true && owner != player){
 			int getmoney = dice.roll();
-			player.getAccount().withdraw(getmoney * 100);
-			owner.getAccount().deposit(getmoney *100);
+			owner.getAccount().deposit(player.getAccount().withdraw(getmoney * 100));
 			GUI.setBalance(player.getName(), player.getAccount().getBalance());
 			GUI.setBalance(owner.getName(), owner.getAccount().getBalance());
 		}

@@ -46,21 +46,21 @@ public class GameBoard {
 		areas[2] = new Territory(300, 1500, "Crater", 2);
 		areas[3] = new Fields.Tax(2000, "Goldmine");
 		areas[4] = new Territory(500, 2000, "Mountain", 4);
-		areas[5] = new Fleet();
+		areas[5] = new Fleet("Second Sail", 5);
 		areas[6] = new Territory(700, 3000, "Cold Desert", 6);
 		areas[7] = new Fields.Refuge(5000);
 		areas[8] = new Territory(1000, 4000, "Black Cave", 8);
-		areas[9] = new Fleet();
+		areas[9] = new Fleet("Sea Grover", 9);
 		areas[10] = new Territory(1300, 4300, "The Werewall", 10);
 		areas[11] = new LaborCamp(2500);
 		areas[12] = new Territory(1600, 4750, "Mountain Village", 12);
 		areas[13] = new Fields.Tax(4000, "Caravan");
 		areas[14] = new Territory(2000, 5000, "South Citadel", 14);
-		areas[15] = new Fleet();
+		areas[15] = new Fleet("The Buccaneers", 15);
 		areas[16] = new Territory(2600, 5500, "Palace Gates", 16);
 		areas[17] = new Fields.Refuge(500);
 		areas[18] = new Territory(3200, 6000, "Tower", 18);
-		areas[19] = new Fleet();
+		areas[19] = new Fleet("Privateer Armada", 19);
 		areas[20] = new Territory(4000, 8000, "Castle", 20);
 	}
 	

@@ -31,15 +31,17 @@ public class Territory extends Ownable {
 
 		}
 
-		else if (owned != true && player.getAccount().getBalance() >= price && GUI.getUserLeftButtonPressed("Do you want to buy this fieldfield?", "Yes", "No")) {
+		else if (owned != true && player.getAccount().getBalance() >= price) {
+			if(GUI.getUserLeftButtonPressed("Do you want to buy this field", "Yes", "No"))
+			{
 				owned = true;
 				owner = player;
 				GUI.showMessage("You are the proud owner of this.");
-				GUI.setOwner(fieldnumber-1, owner.getName());
+				GUI.setOwner(fieldnumber+2, owner.getName());
+			}
 		}
 		else if(owned = true && owner != player){
-			player.getAccount().withdraw(rent);
-			owner.getAccount().deposit(rent);
+			owner.getAccount().deposit(player.getAccount().withdraw(rent));
 			GUI.setBalance(player.getName(), player.getAccount().getBalance());
 			GUI.setBalance(owner.getName(), owner.getAccount().getBalance());
 		}

@@ -9,6 +9,13 @@ public  class Fleet extends Ownable {
 		private final int RENT_2 = 1000;
 		private final int RENT_3 = 2000;
 		private final int RENT_4 = 4000;
+		private String name;
+		
+		public Fleet(String a, int b){
+			name = a;
+			fieldnumber = b;
+		}
+		
 		@Override
 		public int getRent() {
 			// TODO Auto-generated method stub
@@ -20,16 +27,18 @@ public  class Fleet extends Ownable {
 				GUI.showMessage("You own this field");
 			}
 
-			else if (owned != true && player.getAccount().getBalance() >= price && GUI.getUserLeftButtonPressed("Do you want to buy this fieldfield?", "Yes", "No")) {
+			else if (owned != true && player.getAccount().getBalance() >= price) {
+				if(GUI.getUserLeftButtonPressed("Do you want to buy this field?", "Yes", "No")){
 					owned = true;
 					owner = player;
 					GUI.showMessage("You are the proud owner of this.");
-					GUI.setOwner(fieldnumber-1, owner.getName());
 					player.addFieldsOwned();
+					GUI.setOwner(fieldnumber+2, owner.getName());
+				}
 			}
 			else if(owned = true && owner != player){
 				int checker = owner.getFieldsOwned();
-				int payout;
+				int payout = 0;
 				switch(checker){
 				case 1: payout = 500;
 				break;
@@ -41,13 +50,13 @@ public  class Fleet extends Ownable {
 				break;
 				default: System.out.println("Something went terribly wrong, fejlkode 1000");
 				}
-				
-				player.getAccount().withdraw(payout);
-				owner.getAccount().deposit(payout);
+				owner.getAccount().deposit(player.getAccount().withdraw(payout));
 				GUI.setBalance(player.getName(), player.getAccount().getBalance());
 				GUI.setBalance(owner.getName(), owner.getAccount().getBalance());
 			}
-
+			else{
+				System.out.println("jeg er rekker");
+			}
 		}
 		@Override
 		public int getPrice() {

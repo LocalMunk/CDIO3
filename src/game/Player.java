@@ -5,11 +5,13 @@ public class Player {
 	private String name;
 	private int position;
 	private int fieldsOwned;
+	private boolean alive;
 	
-	public Player(String x, int a){
+	public Player(String x, int a, boolean b){
 		name = x;
 		account = new Account(a);
 		position = 1;
+		alive = b;
 	}
 	
 	public String getName(){
@@ -34,5 +36,13 @@ public class Player {
 	
 	public int getFieldsOwned(){
 		return fieldsOwned;
+	}
+
+	public boolean isAlive() {
+		return alive;
+	}
+
+	public void setAlive(boolean alive) {
+		this.alive = alive;
 	}
 }
