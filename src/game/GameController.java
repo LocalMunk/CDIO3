@@ -8,23 +8,23 @@ public class GameController {
 	private Dice dice;
 	private Turn turn;
 	private GameBoard board;
-	private String[] y;
+	private String y;
+	private int amountofplayers;
 	
 	public GameController(){
 		board = new GameBoard();
-		//int x = GUI.getUserInteger("How many players(2-6 players)", 2, 6);
-		int x = 2;
-		this.players = new Player[x];
-		for(int i = 0; i < x; i++){
-			//y = GUI.getUserString("What is your name?");
-			y = new String[2];
-			y[0] ="hej";
-			y[1] ="farvel";
-			this.players[i] = new Player(y[i], 30000, true);
+		this.amountofplayers = 0;
+		amountofplayers = GUI.getUserInteger("How many players(2-6 players)", 2, 6);
+		this.players = new Player[amountofplayers];
+		for(int i = 0; i < amountofplayers; i++){
+			y = GUI.getUserString("What is your name?");
+			this.players[i] = new Player(y, 30000, true);
 			GUI.addPlayer(this.players[i].getName(), 30000);
 			GUI.setCar(1,this.players[i].getName());
 		}
-		turn = new Turn(x);
+		players[1].getAccount().withdraw(29900);
+		
+		turn = new Turn(this);
 		dice = new Dice(6);
 	}
 	
@@ -34,8 +34,12 @@ public class GameController {
 		}
 	}
 	
+	public int getamountop(){
+		return this.amountofplayers;
+	}
+	
 	public void game(Player player){
-		if(GUI.getUserButtonPressed("Press ENTER to roll the dice", "ENTER").equals("ENTER")){
+		if(GUI.getUserButtonPressed(player.getName() + "'s turn, Press ENTER to roll the dice", "ENTER").equals("ENTER")){
 			dice.roll();
 			for(int i = 0; i < dice.getValue(); i++){
 				if(player.getPosition() < 22){
@@ -53,6 +57,20 @@ public class GameController {
 			if(player.getAccount().getBalance() == 0){
 				GUI.showMessage(player.getName() + " is dead");
 				GUI.removeAllCars(player.getName());
+			}
+			if(player.getAccount().getBalance() <= 0){
+				this.amountofplayers--;
+				int length = 0;
+				for(Player a: this.players){
+					length++;
+				}
+				this.players[turn.getCheck()-1] = this.players[length - 1];
+			}
+			if(this.amountofplayers == 1){
+				GUI.showMessage("u haf won u r da bess,  gr8 m8 i r8 1/8");
+				GUI.showMessage("tryk ENTER for at lukke spillet");
+				GUI.close();
+				System.exit(0);
 			}
 			turn.change();
 			

@@ -14,7 +14,7 @@ public class Dice {
 		int a = (int)(Math.random() * sides + 1);
 		int b = (int)(Math.random() * sides + 1);
 		GUI.setDice(a, b);
-		value = 1;//a + b;
+		value = a + b;
 		return value;
 	}
 	

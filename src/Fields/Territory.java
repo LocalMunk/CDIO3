@@ -42,10 +42,13 @@ public class Territory extends Ownable {
 				GUI.setBalance(player.getName(), player.getAccount().getBalance());
 			}
 		}
-		else if(owned = true && owner != player){
+		else if(owned && owner != player){
 			owner.getAccount().deposit(player.getAccount().withdraw(rent));
 			GUI.setBalance(player.getName(), player.getAccount().getBalance());
 			GUI.setBalance(owner.getName(), owner.getAccount().getBalance());
+		}
+		else{
+			
 		}
 	}
 

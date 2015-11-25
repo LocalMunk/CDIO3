@@ -2,15 +2,17 @@ package game;
 
 public class Turn {
 
-	private int check, numofplayers;
+	private int check;
+	private GameController control;
 	
-	public Turn(int a){
-		numofplayers = a;
+	public Turn(GameController a){
 		check = 1;
+		control = a;
+	
 	}
 	
 	public void change(){
-		if(check == numofplayers){
+		if(check == control.getamountop()){
 			check = 1;
 		}
 		else{

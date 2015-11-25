@@ -39,7 +39,7 @@ public  class Fleet extends Ownable {
 					GUI.setBalance(player.getName(), player.getAccount().getBalance());
 				}
 			}
-			else if(owned = true && owner != player){
+			else if(owned && owner != player){
 				int checker = owner.getFieldsOwned();
 				int payout = 0;
 				switch(checker){

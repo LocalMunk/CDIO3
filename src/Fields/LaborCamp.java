@@ -40,7 +40,7 @@ public class LaborCamp extends Ownable {
 			}
 
 		}
-		else if(owned = true && owner != player){
+		else if(owned && owner != player){
 			int getmoney = dice.roll();
 			owner.getAccount().deposit(player.getAccount().withdraw(getmoney * 100));
 			GUI.setBalance(player.getName(), player.getAccount().getBalance());

@@ -12,6 +12,7 @@ public class Player {
 		account = new Account(a);
 		position = 1;
 		alive = b;
+		fieldsOwned = 0;
 	}
 	
 	public String getName(){
