@@ -38,6 +38,8 @@ public class Territory extends Ownable {
 				owner = player;
 				GUI.showMessage("You are the proud owner of this.");
 				GUI.setOwner(fieldnumber+2, owner.getName());
+				player.getAccount().withdraw(price);
+				GUI.setBalance(player.getName(), player.getAccount().getBalance());
 			}
 		}
 		else if(owned = true && owner != player){
