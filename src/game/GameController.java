@@ -20,7 +20,7 @@ public class GameController {
 			y = new String[2];
 			y[0] ="hej";
 			y[1] ="farvel";
-			this.players[i] = new Player(y[i], 30000);
+			this.players[i] = new Player(y[i], 30000, true);
 			GUI.addPlayer(this.players[i].getName(), 30000);
 			GUI.setCar(1, this.players[i].getName());
 		}
@@ -28,9 +28,11 @@ public class GameController {
 		dice = new Dice(6);
 	}
 	
-	public void loop(){
+	public void loop(Player player){
 		while(true){
-			game(players[turn.getCheck()-1]);
+			if(player.isAlive()){
+			game(player);
+			}
 		}
 	}
 	
@@ -50,6 +52,10 @@ public class GameController {
 				}
 			}
 			board.getAreas(player.getPosition()).landOnField(player);
+			if(player.getAccount().getBalance() == 0){
+				GUI.showMessage(player.getName() + " is dead");
+				GUI.removeAllCars(player.getName());
+			}
 			turn.change();
 			
 		}
