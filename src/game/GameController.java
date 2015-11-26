@@ -23,7 +23,7 @@ public class GameController {
 			GUI.addPlayer(this.players[i].getName(), 30000);
 			GUI.setCar(1,this.players[i].getName());
 		}
-		players[1].getAccount().withdraw(29900);
+	
 		
 		turn = new Turn(this);
 		dice = new Dice(6);
