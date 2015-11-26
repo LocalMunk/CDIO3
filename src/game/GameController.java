@@ -1,5 +1,6 @@
 package game;
 
+import Fields.Area;
 import desktop_resources.GUI;
 
 public class GameController {
@@ -65,6 +66,15 @@ public class GameController {
 					length++;
 				}
 				this.players[turn.getCheck()-1] = this.players[length - 1];
+				for(Area x: board.getAreaList()){
+					try{
+					if(x.getOwner().getName().equals(player.getName())){
+						x.setOwned(false);
+					}
+					}catch(Exception e){
+						
+					}
+				}
 			}
 			if(this.amountofplayers == 1){
 				GUI.showMessage("u haf won u r da bess,  gr8 m8 i r8 1/8");

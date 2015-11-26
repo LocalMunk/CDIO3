@@ -45,4 +45,16 @@ public class Tax extends Area{
 	public void setTaxRate(int taxRate) {
 		this.taxRate = taxRate;
 	}
+
+	@Override
+	public Player getOwner() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setOwned(boolean bool) {
+		// TODO Auto-generated method stub
+		
+	}
 }

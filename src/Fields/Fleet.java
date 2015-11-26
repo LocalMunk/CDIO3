@@ -66,14 +66,21 @@ public  class Fleet extends Ownable {
 			return 0;
 		}
 		@Override
-		public void setOwner() {
+		public void setOwner(Player player) {
 			// TODO Auto-generated method stub
+			owner = player;
 			
 		}
 		@Override
 		public Player getOwner() {
 			// TODO Auto-generated method stub
-			return null;
+			return owner;
+		}
+
+		@Override
+		public void setOwned(boolean bool) {
+			// TODO Auto-generated method stub
+			owned = bool;
 		}
 	
 	

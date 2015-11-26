@@ -68,9 +68,8 @@ public class LaborCamp extends Ownable {
 	}
 
 	@Override
-	public void setOwner() {
+	public void setOwned(boolean bool) {
 		// TODO Auto-generated method stub
-		
+		owned = bool;
 	}
-
 }

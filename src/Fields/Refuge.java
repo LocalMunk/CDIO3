@@ -16,6 +16,16 @@ public class Refuge extends Area{
 		player.getAccount().deposit(bonus);
 		GUI.setBalance(player.getName(), player.getAccount().getBalance());
 	}
-	
-	
+
+	@Override
+	public Player getOwner() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setOwned(boolean bool) {
+		// TODO Auto-generated method stub
+		
+	}
 }

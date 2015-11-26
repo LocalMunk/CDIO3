@@ -70,6 +70,10 @@ public class GameBoard {
 		a--;
 		return areas[a];
 	}
+	
+	public Area[] getAreaList(){
+		return areas;
+	}
 }
 
 

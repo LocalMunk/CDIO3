@@ -64,8 +64,8 @@ public class Territory extends Ownable {
 		owner = player;
 	}
 	@Override
-	public void setOwner() {
+	public void setOwned(boolean bool) {
 		// TODO Auto-generated method stub
-		
+		owned = bool;
 	}
 }
