@@ -87,8 +87,8 @@ public class GameController {
 				}
 			}
 			if(this.amountofplayers == 1){
-				GUI.showMessage("u haf won u r da bess,  gr8 m8 i r8 1/8");
-				GUI.showMessage("tryk ENTER for at lukke spillet");
+				GUI.showMessage("You have won the game");
+				GUI.showMessage("Press enter to close the game");
 				GUI.close();
 				System.exit(0);
 			}

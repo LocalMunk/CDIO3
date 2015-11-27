@@ -55,7 +55,7 @@ public  class Fleet extends Ownable {
 					GUI.setBalance(player.getName(), player.getAccount().getBalance());
 				}
 			}
-			/**If the player is not the owner it then checks how meny fleet is owned by the other player and with draws it form 
+			/**If the player is not the owner it then checks how meny fleets is owned by the other player and with draws it form 
 			 * the players account
 			 */
 			else if(owned && owner != player){
@@ -77,7 +77,7 @@ public  class Fleet extends Ownable {
 				GUI.setBalance(owner.getName(), owner.getAccount().getBalance());
 			}
 			else{
-				System.out.println("jeg er rekker");
+				System.out.println("An error occured");
 			}
 		}
 		@Override

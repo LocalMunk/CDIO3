@@ -66,7 +66,7 @@ public class LaborCamp extends Ownable {
 		}
 		else if(price > player.getAccount().getBalance())
 		{
-			GUI.showMessage("Your balance is too low,n00b");
+			GUI.showMessage("Your balance is too low");
 			
 		}
 
