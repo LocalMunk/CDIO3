@@ -46,6 +46,11 @@ public class LaborCamp extends Ownable {
 			GUI.setBalance(player.getName(), player.getAccount().getBalance());
 			GUI.setBalance(owner.getName(), owner.getAccount().getBalance());
 		}
+		else if(price > player.getAccount().getBalance())
+		{
+			GUI.showMessage("Your balance is too low,n00b");
+			
+		}
 
 	}
 
