@@ -33,7 +33,7 @@ public class LandOnFieldTax {
 
 		this.tax10procent = new Tax(0,"Caravan");
 
-		this.tax4000 = new Tax(4000,"Hej");
+		this.tax4000 = new Tax(4000,"A castle");
 
 	}
 	
