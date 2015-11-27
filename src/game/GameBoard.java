@@ -14,7 +14,9 @@ public class GameBoard {
 
 	private Area[] areas = new Area[22];
 	private  Field[] fields = new Field[22];
-	
+	/**
+	 * builds the gameboard, the first part builds the GUI board, and the second builds the code board.
+	 */
 	public GameBoard(){
 		
 		fields[0] = new Start.Builder()		.setTitle("Hometown")																									.setDescription("Home sweet home. Nothing happens here.").build();									// Start: Oxford

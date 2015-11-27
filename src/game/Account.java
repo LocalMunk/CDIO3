@@ -14,7 +14,10 @@ public class Account {
 	public int getBalance(){
 		return balance;
 	}
-		
+	/**
+	 *	Attempts towithdraw the given ammount, if there is not enough money to withdraw it only withdraws so much that there is 0 left
+	 *	returns the withdrawn amount
+	 */
 	public int withdraw(int take){
 		int out;
 		if(take < balance && take > 0){
@@ -29,7 +32,7 @@ public class Account {
 		}
 		return out;
 	}
-	
+	// deposits the given amount only if the given amount is a positive number
 	public void deposit(int give){
 		if(give > 0){
 			balance += give;

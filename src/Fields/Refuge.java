@@ -14,7 +14,9 @@ public class Refuge extends Area{
 	public Refuge(int a){
 		bonus = a;
 	}
-	
+		/**
+		 * The player receives a bonus witch is deposited onto his account
+		 */
 	@Override
 	public void landOnField(Player player) {
 		player.getAccount().deposit(bonus);

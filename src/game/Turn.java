@@ -10,7 +10,9 @@ public class Turn {
 		control = a;
 	
 	}
-	
+	/**
+	 * changes the turn of the players
+	 */
 	public void change(){
 		if(check == control.getamountop()){
 			check = 1;

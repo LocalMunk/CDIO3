@@ -12,6 +12,9 @@ public class GameController {
 	private String y;
 	private int amountofplayers;
 	
+	/**
+	 * Builds the necessary objects for the game to begin
+	 */
 	public GameController(){
 		board = new GameBoard();
 		this.amountofplayers = 0;
@@ -28,7 +31,9 @@ public class GameController {
 		turn = new Turn(this);
 		dice = new Dice(6);
 	}
-	
+	/**
+	 * loops through the different players turns
+	 */
 	public void loop(){
 		while(true){
 			game(players[turn.getCheck()-1]);
@@ -38,7 +43,12 @@ public class GameController {
 	public int getamountop(){
 		return this.amountofplayers;
 	}
-	
+	/**
+	 * asks the player to press the button , then rolls the dice and moves the player
+	 * calls the method land on field
+	 * if the player reaches 0 money, it will terminate the player from the game, 
+	 * by excluding him from the playerarray and removing ownership from his owned fields 
+	 */
 	public void game(Player player){
 		if(GUI.getUserButtonPressed(player.getName() + "'s turn, Press ENTER to roll the dice", "ENTER").equals("ENTER")){
 			dice.roll();

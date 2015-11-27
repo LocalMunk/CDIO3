@@ -18,39 +18,42 @@ public class Tax extends Area {
 		taxAmount = a;
 		fieldName = b;
 	}
-
+	/**
+	 * Checks wether the field is == Caravan. The Player is then asked to choose between 10% of total assets or 4000
+	 * It then widraws 10% or 4000 from the players account
+	 */
 	@Override
 	public void landOnField(Player player) {	
 		if (fieldName.equals("Caravan")) {
-			if (GUI.getUserLeftButtonPressed(
-					"u want to pay 10% of ur totales moneys, or u wantes to pay me many money(i think maybe 4k", "10%",
-					"Many money")) {
+			if (GUI.getUserLeftButtonPressed("Pay 10% of total assets?, or do you want to pay 4000?", "10%", "4000")) {
 				player.getAccount().withdraw(player.getAccount().getBalance() / 10);
 			} else {
 				player.getAccount().withdraw(taxAmount);
 			}
+			/** If the field is gold mine it withdraws 2000 from the players account
+			 * The GUI then updates the balance
+			 */
 		} else
 			player.getAccount().withdraw(taxAmount);
 		GUI.setBalance(player.getName(), player.getAccount().getBalance());
 
 	}
-
+		/** 
+		 * Returns the taxamount of a given field
+		 * 
+		 */
 	public int getTaxAmount() {
 		return taxAmount;
 	}
 
+		/**
+		 * Sets the taxamount for a given field
+		 */
 	public void setTaxAmount(int taxAmount) {
 		this.taxAmount = taxAmount;
 	}
 
-	public int getTaxRate() {
-		return taxRate;
-	}
-
-	public void setTaxRate(int taxRate) {
-		this.taxRate = taxRate;
-	}
-
+	
 	@Override
 	public Player getOwner() {
 		// TODO Auto-generated method stub

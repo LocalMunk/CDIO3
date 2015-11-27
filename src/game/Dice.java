@@ -9,7 +9,9 @@ public class Dice {
 	public Dice(int a){
 		sides = a;
 	}
-	
+	/**
+	 * Rolls 2 dice and returns the sum
+	 */
 	public int roll(){
 		int a = (int)(Math.random() * sides + 1);
 		int b = (int)(Math.random() * sides + 1);
