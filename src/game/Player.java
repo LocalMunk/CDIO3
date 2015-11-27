@@ -6,6 +6,7 @@ public class Player {
 	private int position;
 	private int fieldsOwned;
 	private boolean alive;
+	private int laborCampsOwned;
 	
 	public Player(String x, int a, boolean b){
 		name = x;
@@ -13,6 +14,7 @@ public class Player {
 		position = 1;
 		alive = b;
 		fieldsOwned = 0;
+		setLaborCampsOwned(0);
 	}
 	
 	public String getName(){
@@ -45,5 +47,13 @@ public class Player {
 
 	public void setAlive(boolean alive) {
 		this.alive = alive;
+	}
+
+	public int getLaborCampsOwned() {
+		return laborCampsOwned;
+	}
+
+	public void setLaborCampsOwned(int laborCampsOwned) {
+		this.laborCampsOwned = laborCampsOwned;
 	}
 }

@@ -21,9 +21,4 @@ public class Dice {
 	public int getValue(){
 		return value;
 	}
-	
-	public void setValue(int c, int d){
-		this.value = c+d;
-		
-	}
 }

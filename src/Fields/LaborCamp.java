@@ -42,13 +42,13 @@ public class LaborCamp extends Ownable {
 				GUI.setOwner(fieldnumber+1, owner.getName());
 				player.getAccount().withdraw(price);
 				GUI.setBalance(player.getName(), player.getAccount().getBalance());
-
+				player.setLaborCampsOwned(player.getLaborCampsOwned() + 1);
 			}
 
 		}
 		else if(owned && owner != player){
 			int getmoney = dice.roll();
-			owner.getAccount().deposit(player.getAccount().withdraw(getmoney * 100));
+			owner.getAccount().deposit(player.getAccount().withdraw(getmoney * 100 * owner.getLaborCampsOwned()));
 			GUI.setBalance(player.getName(), player.getAccount().getBalance());
 			GUI.setBalance(owner.getName(), owner.getAccount().getBalance());
 		}
