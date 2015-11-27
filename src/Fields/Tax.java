@@ -9,6 +9,11 @@ public class Tax extends Area {
 	private int taxRate = -1;
 	private String fieldName;
 
+	/**
+	 * Makes a tax field, that withdraws money from player
+	 * @param a Tax amount (int)
+	 * @param b Field name (string)
+	 */
 	public Tax(int a, String b) {
 		taxAmount = a;
 		fieldName = b;

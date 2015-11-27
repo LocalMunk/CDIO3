@@ -12,6 +12,12 @@ public  class Fleet extends Ownable {
 		private String name;
 		private final int price = 4000;
 		
+		/**
+		 * Makes a fleet field.
+		 * Buying price is predefined at 4.000
+		 * @param a Name of the fleet field (String)
+		 * @param b Field number (int)
+		 */
 		public Fleet(String a, int b){
 			name = a;
 			fieldnumber = b;

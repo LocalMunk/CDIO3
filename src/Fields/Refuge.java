@@ -7,6 +7,10 @@ public class Refuge extends Area{
 
 	private int bonus;
 	
+	/**
+	 * Makes a refuge field, that contains a bonus
+	 * @param a bonus (int)
+	 */
 	public Refuge(int a){
 		bonus = a;
 	}

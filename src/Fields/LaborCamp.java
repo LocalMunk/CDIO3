@@ -8,6 +8,12 @@ public class LaborCamp extends Ownable {
 
 	private int price;
 	private Dice dice = new Dice(6);
+	
+	/**
+	 * Makes a LaborCamp field
+	 * @param a Field price (int)
+	 * @param b Field number (int)
+	 */
 	public LaborCamp(int a, int b){
 		price = a;
 		fieldnumber = b;

@@ -11,6 +11,13 @@ public class Territory extends Ownable {
 	private boolean owned, buybutton;
 	private String name;
 
+	/**
+	 * Makes a territory field
+	 * @param a Rent (int)
+	 * @param b Field price (int)
+	 * @param c Field name (string)
+	 * @param d Field number (int)
+	 */
 	public Territory(int a, int b, String c, int d){
 		rent = a;
 		price = b;
