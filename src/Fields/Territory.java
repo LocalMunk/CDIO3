@@ -12,7 +12,7 @@ public class Territory extends Ownable {
 	private String name;
 
 	/**
-	 * Makes a territory field
+	 * Creates a territory field
 	 * @param a Rent (int)
 	 * @param b Field price (int)
 	 * @param c Field name (string)
